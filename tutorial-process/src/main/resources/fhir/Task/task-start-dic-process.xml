@@ -1,16 +1,20 @@
 <Task xmlns="http://hl7.org/fhir">
     <meta>
-        <profile value="http://dsf.dev/fhir/StructureDefinition/task-start-dic-process|1.0"/>
+        <profile value="http://dsf.dev/fhir/StructureDefinition/task-start-dic-process|#{version}"/>
     </meta>
-    <instantiatesCanonical value="http://dsf.dev/bpe/Process/dicProcess|1.0" />
-    <status value="requested"/>
+    <identifier>
+        <system value="http://dsf.dev/sid/task-identifier" />
+        <value value="http://dsf.dev/bpe/Process/dicProcess/#{version}/task-start-dic-process" />
+    </identifier>
+    <instantiatesCanonical value="http://dsf.dev/bpe/Process/dicProcess|#{version}" />
+    <status value="draft"/>
     <intent value="order"/>
     <authoredOn value="2024-02-08T10:00:00+00:00" />
     <requester>
         <type value="Organization"/>
         <identifier>
             <system value="http://dsf.dev/sid/organization-identifier"/>
-            <value value="Test_DIC"/>
+            <value value="#{organization}"/>
         </identifier>
     </requester>
     <restriction>
@@ -18,7 +22,7 @@
             <type value="Organization"/>
             <identifier>
                 <system value="http://dsf.dev/sid/organization-identifier"/>
-                <value value="Test_DIC"/>
+                <value value="#{organization}"/>
             </identifier>
         </recipient>
     </restriction>
