@@ -13,14 +13,19 @@ public class DicTask extends AbstractServiceDelegate {
 
     private static final Logger logger = LoggerFactory.getLogger(DicTask.class);
 
-    public DicTask(ProcessPluginApi api) {
+    private boolean loggingEnabled;
+
+    public DicTask(ProcessPluginApi api, boolean loggingEnabled) {
         super(api);
+        this.loggingEnabled = loggingEnabled;
     }
 
     @Override
     protected void doExecute(DelegateExecution execution, Variables variables) {
         //Add a log message to the DicTask#doExecute method that logs the recipient organization identifier from the start FHIR Task resource.
-        logger.info("organization with identifier: " +
-                variables.getStartTask().getRequester().getIdentifier().getValue());
+        if (loggingEnabled)
+            logger.info("organization with identifier: " +
+                    variables.getStartTask().getRequester().getIdentifier().getValue());
+        else System.out.println("DAS IST KEINE LOGGER!");
     }
 }

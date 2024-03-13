@@ -1,0 +1,31 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <meta>
+        <tag>
+            <system value="http://dsf.dev/fhir/CodeSystem/read-access-tag"/>
+            <code value="ALL"/>
+        </tag>
+    </meta>
+    <url value="http://dsf.dev/fhir/ValueSet/tutorial"/>    <!--dummy value-->
+    <!-- version managed by bpe -->
+    <version value="#{version}"/>
+    <name value="My ValueSet"/>     <!--dummy value-->
+    <title value="My ValueSet Title"/>  <!--dummy value-->
+    <!-- status managed by bpe -->
+    <status value="unknown"/>
+    <experimental value="false"/>
+    <!-- date managed by bpe -->
+    <date value="#{date}"/>
+    <publisher value="DSF"/>    <!--dummy value-->
+    <description value="ValueSet with all codes from my-code-system"/>      <!--dummy value-->
+    <immutable value="true"/>
+    <compose>
+        <include>
+            <system value="http://dsf.dev/fhir/CodeSystem/tutorial"/>     <!--dummy value-->
+            <version value="#{version}"/>
+            <concept>
+                <code value="tutorial-input"/>
+                <display value="Input Display"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>

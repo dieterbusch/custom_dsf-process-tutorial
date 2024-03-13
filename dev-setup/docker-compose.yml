@@ -37,7 +37,7 @@ services:
     image: postgres:15
     restart: "no"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U liquibase_user -d postgres"]
+      test: [ "CMD-SHELL", "pg_isready -U liquibase_user -d postgres" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -187,6 +187,9 @@ services:
     environment:
       TZ: Europe/Berlin
       EXTRA_JVM_ARGS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
+
+      DEV_DSF_DICPROCESS_LOGGINGENABLED: true
+
       DEV_DSF_BPE_DB_LIQUIBASE_PASSWORD_FILE: /run/secrets/db_liquibase.password
       DEV_DSF_BPE_DB_USER_PASSWORD_FILE: /run/secrets/db_cos_bpe_user.password
       DEV_DSF_BPE_DB_USER_CAMUNDA_PASSWORD_FILE: /run/secrets/db_cos_bpe_user_camunda.password
