@@ -42,9 +42,10 @@ public class TutorialProcessPluginDefinition implements ProcessPluginDefinition 
         String codeSystem = "fhir/CodeSystem/tutorial.xml";
         String valueSet = "fhir/ValueSet/tutorial.xml";
 
-
-        return Map.of(ConstantsTutorial.PROCESS_NAME_FULL_DIC, List.of(aDicProcess,
+        Map<String, List<String>> map = Map.of(ConstantsTutorial.PROCESS_NAME_FULL_DIC, List.of(aDicProcess,
                 sTaskDicProcess, draftTaskDicProcess, codeSystem, valueSet));
+
+        return map;
     }
 
     @Override
