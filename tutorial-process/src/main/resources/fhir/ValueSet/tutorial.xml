@@ -22,10 +22,10 @@
         <include>
             <system value="http://dsf.dev/fhir/CodeSystem/tutorial"/>     <!--dummy value-->
             <version value="#{version}"/>
-            <concept>
-                <code value="tutorial-input"/>
-                <display value="Input Display"/>
-            </concept>
+<!--            <concept>-->
+<!--                <code value="tutorial-input"/>-->
+<!--                <display value="Input Display"/>-->
+<!--            </concept>-->
         </include>
     </compose>
 </ValueSet>

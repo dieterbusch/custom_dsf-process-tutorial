@@ -102,3 +102,15 @@
     </compose>
 </ValueSet>
 ```
+
+```xml
+    <input>
+        <type>
+            <coding>
+                <system value="http://dsf.dev/fhir/CodeSystem/tutorial" />
+                <code value="tutorial-input" />
+            </coding>
+        </type>
+        <valueString value="startDicProcess" />
+    </input>
+```

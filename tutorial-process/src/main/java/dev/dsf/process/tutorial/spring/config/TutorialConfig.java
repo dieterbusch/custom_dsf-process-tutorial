@@ -25,7 +25,7 @@ public class TutorialConfig {
     @Bean
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     public DicTask dicTask() {
-        return new DicTask(api);
+        return new DicTask(api, loggingEnabled);
     }
 
 }

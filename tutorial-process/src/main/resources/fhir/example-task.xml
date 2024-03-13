@@ -2,10 +2,14 @@
     <meta>
         <profile value="http://dsf.dev/fhir/StructureDefinition/task-start-dic-process|1.0"/>
     </meta>
-    <instantiatesCanonical value="http://dsf.dev/bpe/Process/dicProcess|1.0" />
-    <status value="requested"/>
+    <identifier>
+        <system value="http://dsf.dev/sid/task-identifier" />
+        <value value="http://dsf.dev/bpe/Process/dicProcess/1.0/task-start-dic-process" />
+    </identifier>
+    <instantiatesCanonical value="http://dsf.dev/bpe/Process/dicProcess|1.0"/>
+    <status value="draft"/>
     <intent value="order"/>
-    <authoredOn value="2024-02-08T10:00:00+00:00" />
+    <authoredOn value="2024-02-08T10:00:00+00:00"/>
     <requester>
         <type value="Organization"/>
         <identifier>
@@ -30,5 +34,14 @@
             </coding>
         </type>
         <valueString value="startDicProcess" />
+    </input>
+    <input>
+        <type>
+            <coding>
+                <system value="http://dsf.dev/fhir/CodeSystem/tutorial"/>
+                <code value="tutorial-input"/>
+            </coding>
+        </type>
+        <valueString value="InputValueString_tutorial"/>
     </input>
 </Task>

@@ -7,9 +7,13 @@ HEADER_XML=application/fhir+xml;charset=utf-8
 
 FILE?=TODO_DEFINE_FILE_VAR:(make%post_t%FILE=<FILE>)
 
+ID?=TODO_DEFINE_ID:(make%put_t%ID=<ID>)
+
 get_t:
 	curl --cert $(CERT):$(CERT_PW) --key $(PK) -H "Accept: $(HEADER_JSON)" $(HOST)Task?_pretty=true --insecure
 
 post_t:
 	curl -X POST --cert $(CERT):$(CERT_PW)  --key $(PK) -H "Content-Type: $(HEADER_XML)"  -d @$(FILE) $(HOST)Task?_pretty=true --insecure
 
+put_t:
+	curl -X PUT --cert $(CERT):$(CERT_PW)  --key $(PK) -H "Content-Type: $(HEADER_XML)"  -d @$(FILE) $(HOST)Task/$(ID)?_pretty=true --insecure
